@@ -10,7 +10,7 @@ const  btn = document.querySelector("#btn");
 const list = document.querySelector("#list");
 let el = document.getElementsByTagName('li');
 
-// this function will allow us to add elements when we click the button
+// add elements on click the button
 btn.onclick = function(){    
     let txt = input.value;
     if(txt ==''){
@@ -27,7 +27,7 @@ btn.onclick = function(){
     
 };
 
-//this function will allow us to check the clicked elements
+//check the clicked elements
 list.onclick = function(ev){
     if(ev.target.tagName == 'LI'){
          ev.target.classList.toggle('checked');
