@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Todo list</title>
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,700,900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <h1 class="title">Things I need TO DO!</h1>
+    
+    <div class="current-date" id="current-date"></div>
+
+    <div class="task-lists-container">
+      <h2 class="task-list-title">My Lists of Tasks</h2>
+      <ul class="task-list" new-task-lists></ul>
+
+      <form action="" new-list-form>
+        <input 
+          type="text"
+          class="new list"
+          new-list-input
+          placeholder="new list name"
+          aria-label="new list name"
+        />
+        <button class="btn create" aria-label="create new list">Add List</button>
+      </form>
+      <div class="delete-button">
+        <button class="btn delete" delete-list-button>Remove list</button>
+      </div>
+    </div>
+
+
+
+    <div class="todo-list" tasks-list-display-container>
+      <div class="todo-header">
+        <h2 class="list-title" tasks-list-title-element></h2>
+      </div>
+
+      <div class="todo-body">
+        <div class="tasks" tasks-container></div>
+
+        <div class="new-task-creator">
+            <form action="" new-task-form>
+                <input 
+                  type="text"
+                  new-task-input
+                  class="new task"
+                  placeholder="new task name"
+                  aria-label="new task name"
+                />
+                <button class="btn create" aria-label="create new task">Add Task</button>
+              </form>
+        </div>
+
+        <div class="delete-button">
+          <button class="btn delete" delete-done-tasks-button>Remove completed tasks</button>
+        </div>
+      </div>
+    </div>
+    
+    <template id="task-template">
+      <div class="task">
+        <input type="checkbox" />
+        <label>
+          <span class="custom-checkbox"></span>
+        </label>
+      </div>
+    </template>
+    
+    <script src="js/script.js"></script>    
+  </body>
+</html>

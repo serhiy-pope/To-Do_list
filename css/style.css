@@ -1,0 +1,176 @@
+html, body {
+    height: 100%;
+    width: 100%;
+  }
+  
+  body {
+    margin: 0;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 300;
+    font-size: 1.5rem;
+    background-color: #fcc36d;
+    color: #c4731d;
+    display: grid;
+    grid: 
+      "header header header header" auto 
+      "date date date date" auto
+      "...... lists  active ......" auto /
+    1fr minmax(100px, 300px) minmax(250px, 500px) 1fr;
+  }
+  
+  .title {
+    grid-area: header;
+    text-align: center;
+    font-size: calc(5vw + 2rem);
+    font-weight: 900;
+    color: rgba(0, 0, 0, 0.5);
+    letter-spacing: 2px;
+    margin: -0.3em 0 0;
+  }
+  
+  .current-date {
+    grid-area: date;
+    text-align: left;
+    font-size: calc(2vw + 1rem);
+    font-weight: 900;
+    color: rgba(0, 0, 0, 0.2);
+    margin: 0 0 1em 0.5em;
+  }
+  
+  .task-lists-container {
+    grid-area: lists;
+    margin: 0 0.5em 2em 0.5em;
+  }
+  
+  .task-list {
+    line-height: 1.5;
+    padding-left: 1.1em;
+    cursor: pointer;
+    color: #754002;
+    font-family: 'Special Elite', cursive;
+  }
+  
+  .selected-list {
+    font-weight: 700;
+  }
+  
+  .new {
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid currentColor;
+    color: #faf3eb;
+    transition: border-bottom 200ms ease-in;
+    outline: none;
+  }
+  
+  .new:focus {
+    border-bottom-width: 3px;
+  }
+  
+  .new:focus::placeholder {
+    opacity: 0.2;
+  }
+  
+  .new.task {
+    font-size: 1.2rem;
+  }
+  
+  .btn {
+    letter-spacing: 0.25px;
+    cursor: pointer;
+    background: #c48945;
+    border: 0;
+    padding: 0;
+    border-radius: 3px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  }
+  
+  .btn.create {
+    font-weight: 900;
+    transition: opacity 200ms ease-in;
+  }
+  
+  .btn.delete {
+    font-weight: 900;
+    transition: opacity 200ms ease-in;
+  }
+  
+  .btn.create:hover {
+    opacity: 0.5;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+  .btn.delete:hover {
+    opacity: 0.5;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+  
+  .todo-list {
+    --spacer: 2rem;
+    grid-area: active;
+    background: #ebac6a;
+    color: #704009;
+    margin: 0 0 2em 0.5em;
+    
+  }
+  
+  .todo-header {
+    font-size: 2rem;
+    color: #57320b;
+  }
+  
+  .list-title {
+    margin: 1.5rem 0 2rem 1rem;
+    font-family: 'Special Elite', cursive;
+  }
+  
+  .task-list-title {
+    font-family: 'Special Elite', cursive;
+    color: #754002;
+  }
+  
+  .todo-body {
+    font-family: 'Special Elite', cursive;
+    margin: 0 0 0 1rem;
+  }
+  
+  .custom-checkbox{
+    --size: 0.25em;
+    display: inline-block;
+    margin: 0 0 0.1rem 1rem;
+    width: var(--size);
+    height: var(--size);
+    margin-right: var(--size);
+    cursor: pointer;
+    border: 2px solid currentColor;
+    border-radius: 50%;
+  }
+  
+  .task {
+    margin-bottom: 0.5em;
+  }
+  
+  .task label {
+    cursor: pointer;
+    display: flex-inline;
+    align-items: center;
+    position: relative;
+  }
+  
+  .task label::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 40%;
+    height:2px;
+    background: #a38460;
+    transform: scaleX(0);
+  }
+  
+  [type="checkbox"]:checked+ label::after {
+    transform: scaleX(1);
+  }
+  
+  [type="checkbox"] {
+    display: none;
+  }
